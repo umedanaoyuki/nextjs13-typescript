@@ -2,6 +2,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Link from "next/link";
+import {ChakraProvider} from "@chakra-ui/react";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,16 +20,18 @@ export default function RootLayout({
       <html lang="ja">
       <head />
       <body>
-      <header>
-        <h1>
-          <Link href="/">ブログ</Link>
-        </h1>
-        <Link href="/articles/new">記事を書く</Link>
-      </header>
-      {children}
-      <footer>
-        <small>© 2023 NaoyukiUmeda</small>
-      </footer>
+      <ChakraProvider>
+        <header>
+            <h1>
+                <Link href="/">ブログ</Link>
+            </h1>
+                <Link href="/articles/new">記事を書く</Link>
+        </header>
+            {children}
+        <footer>
+            <small>© 2023 NaoyukiUmeda</small>
+        </footer>
+      </ChakraProvider>
       </body>
       </html>
   );
