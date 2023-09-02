@@ -5,7 +5,6 @@ export default function Home() {
   return (
       <div>
           <h1>新着記事</h1>
-          <h2>新着記事コーナー</h2>
           <ul>
               <li>記事1</li>
               <li>記事2</li>
