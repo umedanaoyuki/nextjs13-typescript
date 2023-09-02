@@ -4,6 +4,9 @@ import { Inter } from 'next/font/google'
 import Link from "next/link";
 import {ChakraProvider} from "@chakra-ui/react";
 import Provider from "@/app/Provider";
+import Header from "@/app/Header";
+import Main from "@/app/Main";
+import Footer from "@/app/Footer";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,16 +25,9 @@ export default function RootLayout({
       <head />
       <body>
       <Provider>
-        <header>
-            <h1>
-                <Link href="/">ブログ</Link>
-            </h1>
-                <Link href="/articles/new">記事を書く</Link>
-        </header>
-            {children}
-        <footer>
-            <small>© 2023 NaoyukiUmeda</small>
-        </footer>
+        <Header></Header>
+          <Main>{children}</Main>
+          <Footer></Footer>
       </Provider>
       </body>
       </html>
